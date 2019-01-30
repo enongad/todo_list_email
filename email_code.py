@@ -9,7 +9,7 @@ from email.mime.text import MIMEText
 from tabulate import tabulate
 
 ##  set up email params
-SMTP_Address = "server@host.com"
+smtp_address = "server@host.com"
 sender_address = 'daily.reminders@host.com'
 sendee_address = 'whoever@host.com'
 
@@ -83,6 +83,6 @@ msg['To'] = to
 msg['Subject'] = "Task list for "+today
 
 ### send email
-s = smt.SMTP(SMTP_Address)
+s = smt.SMTP(smtp_address)
 s.sendmail(sender, to, msg.as_string())
 s.quit()
